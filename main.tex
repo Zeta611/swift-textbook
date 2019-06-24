@@ -1,0 +1,91 @@
+\documentclass[a4paper, 10pt, twoside, calcwidth]{oblivoir}
+\usepackage[left=3.5cm,right=3.5cm,top=3.5cm,bottom=3.5cm, a4paper]{geometry}
+\usepackage{subfiles}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{upgreek}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{tocloft}
+\usepackage{stmaryrd}
+\usepackage{float}
+\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage[datesep={-}]{datetime2}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{minted}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage{chngcntr}
+\counterwithin{footnote}{section}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\usepackage{subcaption}
+\usepackage[normalem]{ulem}
+\usepackage{graphicx}
+
+\ifPDFTeX
+    \usepackage{newpxtext}
+    \usepackage{tgadventor}
+    \usepackage{inconsolata}
+\else\ifLuaOrXeTeX
+    \setmainfont{TeX Gyre Pagella}
+    \setsansfont{TeX Gyre Adventor}
+    \setmonofont{Ubuntu Mono}
+    \setkomainfont(NanumMyeongjo)[](UnBatang)
+    \setkosansfont(NanumBarunGothic)
+\fi\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\fontsize{9}{11}\selectfont\textsf{Swift 및 iOS 개발 입문 교재}}
+\fancyhead[LE]{\fontsize{9}{11}\selectfont\textsf\rightmark}
+\fancyhead[R]{\fontsize{9}{11}\selectfont\textsf\thepage}
+
+\renewcommand{\contentsname}{\normalfont\Large\bfseries\sffamily\color{black!60}{목차}}
+
+\newlength\myseclen
+\setlength\myseclen{\dimexpr\oddsidemargin+\hoffset\relax-0.9em}
+\newlength\mysubseclen
+\setlength\mysubseclen{\dimexpr\oddsidemargin+\hoffset\relax}
+
+\titleformat{\section}
+{\normalfont\Large\bfseries\sffamily\color{black!60}}{\llap{\hspace*{-\myseclen}\thesection\hfill}}{0em}{}
+
+\titleformat{\subsection}
+{\normalfont\large\bfseries\sffamily\color{black!60}}{\llap{\hspace*{-\mysubseclen}\thesubsection\hfill}}{0em}{}
+
+\begin{document}
+
+\begin{center}\sffamily
+\text{}\\[1cm]
+\huge Swift 
+
+\vspace{.1cm}
+\Large Swift 5 및 iOS 개발 방식에 대한 이해\\[.6cm]
+	\begin{tabular} {c c}
+		교재 제작 & v3.1\\
+		이재호 & \today
+	\end{tabular}
+\end{center}
+\vspace{.5cm}
+\noindent\rule[0.5ex]{\linewidth}{.5pt}
+\tableofcontents*
+
+\vspace{2cm}
+{\scriptsize
+\noindent Copyright (c)  2019  Jaeho Lee.\\
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3
+or any later version published by the Free Software Foundation;
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+}
+
+\pagebreak
+
+\section{Swift 소개 및 기본 요소}
+
+\subfile{lectures/lecture1}
+
+\end{document}
